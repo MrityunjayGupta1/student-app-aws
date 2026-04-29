@@ -10,3 +10,8 @@ Python and  flask used
 Cloudwatch monitoring
 <img width="1440" height="900" alt="Screenshot 2026-04-29 at 1 12 20 PM" src="https://github.com/user-attachments/assets/3c1f17ab-3a51-414f-93e7-fe9ffe88d0ff" />
 
+Created S3 Bucket
+<img width="1440" height="900" alt="Screenshot 2026-04-29 at 3 46 29 PM" src="https://github.com/user-attachments/assets/ea0b015a-6723-4ec4-90fd-7c8885345b64" />
+
+Backup Folder that stores json file of students info
+<img width="1440" height="900" alt="Screenshot 2026-04-29 at 3 47 37 PM" src="https://github.com/user-attachments/assets/72ce3b89-a589-47f7-9b50-0fcc3a074ca2" />
