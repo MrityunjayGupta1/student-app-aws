@@ -6,6 +6,7 @@ Simple student management app deployed on AWS EC2.
 - EC2 - runs the Flask app
 - Security Groups - controls traffic
 - CloudWatch - monitors the server
+- S3 (Simple Storage Service) - Every time a student is added, their data is automatically backed up to S3 as a JSON file
 
 ## How to Run
 pip install flask
