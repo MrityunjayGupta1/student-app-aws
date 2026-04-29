@@ -16,3 +16,7 @@ Created S3 Bucket
 
 Backup Folder that stores json file of students info
 <img width="1440" height="900" alt="Screenshot 2026-04-29 at 3 47 37 PM" src="https://github.com/user-attachments/assets/72ce3b89-a589-47f7-9b50-0fcc3a074ca2" />
+
+
+RDS MariaDB Database
+<img width="1440" height="900" alt="Screenshot 2026-04-29 at 3 59 26 PM" src="https://github.com/user-attachments/assets/4b916417-c9df-4318-8abf-6982627940c0" />
