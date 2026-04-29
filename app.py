@@ -1,8 +1,25 @@
+
 from flask import Flask, request, jsonify
+import pymysql
+import boto3
+import json
+from datetime import datetime
 
 app = Flask(__name__)
 
-students = []
+DB_HOST = 'students.cvwcyoa8uwdr.ap-south-1.rds.amazonaws.com'
+DB_USER = 'admin'
+DB_PASS = 'Student@123'
+DB_NAME = 'students'
+S3_BUCKET = 'student-app-backup-aws'
+
+def get_db():
+    return pymysql.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASS,
+        database=DB_NAME
+    )
 
 @app.route('/')
 def home():
@@ -42,13 +59,42 @@ def home():
 
 @app.route('/students', methods=['GET'])
 def get_students():
-    return jsonify(students)
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT name, roll, marks FROM students")
+    rows = cursor.fetchall()
+    conn.close()
+    return jsonify([{'name': r[0], 'roll': r[1], 'marks': r[2]} for r in rows])
 
 @app.route('/students', methods=['POST'])
 def add_student():
     data = request.json
-    students.append({'name': data['name'], 'roll': data['roll'], 'marks': data['marks']})
-    return jsonify({'msg': 'Student added!'})
+
+    # Save to RDS MariaDB
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute(
+        "INSERT INTO students (name, roll, marks) VALUES (%s, %s, %s)",
+        (data['name'], data['roll'], data['marks'])
+    )
+    conn.commit()
+    conn.close()
+
+    # Save backup to S3
+    s3 = boto3.client('s3', region_name='ap-south-1')
+    backup = {
+        'name': data['name'],
+        'roll': data['roll'],
+        'marks': data['marks'],
+        'time': str(datetime.now())
+    }
+    s3.put_object(
+        Bucket=S3_BUCKET,
+        Key=f"backups/{data['roll']}.json",
+        Body=json.dumps(backup)
+    )
+
+    return jsonify({'msg': 'Student added to MariaDB and backed up to S3!'})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
