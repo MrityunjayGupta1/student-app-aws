@@ -31,4 +31,5 @@ python app.py
 
 ## Project Structure
 app.py - main Flask application
+
 requirements.txt - python dependencies
