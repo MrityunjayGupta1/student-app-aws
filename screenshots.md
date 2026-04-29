@@ -11,6 +11,10 @@ Cloudwatch monitoring
 <img width="1440" height="900" alt="Screenshot 2026-04-29 at 3 49 18 PM" src="https://github.com/user-attachments/assets/462ae221-9ba6-4499-8850-a9f399f8bd4a" />
 
 
+The app working on the Browser (http://PublicIP of EC2 instance)
+<img width="1440" height="900" alt="Screenshot 2026-04-29 at 12 37 36 PM" src="https://github.com/user-attachments/assets/c3063ba1-7547-4f6e-b2f3-4fd6d3e529d8" />
+
+
 Created S3 Bucket
 <img width="1440" height="900" alt="Screenshot 2026-04-29 at 3 46 29 PM" src="https://github.com/user-attachments/assets/ea0b015a-6723-4ec4-90fd-7c8885345b64" />
 
