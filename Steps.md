@@ -18,3 +18,6 @@
 
 7.Create S3 Bucket --> Connect EC2 with S3 using IAM Role with (AmazonS3FullAccess) Permission
 
+
+8.Created RDS MariaDB Database
+
