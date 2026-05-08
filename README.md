@@ -30,10 +30,6 @@ What This Project Demonstrates
 <img width="551" height="447" alt="Screenshot 2026-04-28 at 11 57 57 PM" src="https://github.com/user-attachments/assets/9fd20801-4bf8-4125-b97f-713b4afa3fd7" />
 
 
-## How to Run
-pip install flask
-python app.py
-
 ## Project Structure
 app.py - main Flask application
 
